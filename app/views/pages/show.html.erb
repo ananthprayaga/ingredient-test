@@ -1,0 +1,16 @@
+<h3>You Entered</h3>
+
+<p>Here is the list of ingredients split:</p>
+<% @list_of_ingredients.each do |ingredient| %>
+  <li>
+    <ul>
+      <% if @cfmi.include?(ingredient) %>
+        <span style="color:green;"><%= ingredient %></span>
+      <% elsif @fuzzy_hash.include?(ingredient) %>
+        <span style="color:orange;"><%= ingredient %></span>
+      <% else %>
+        <span style="color:red;"><%= ingredient %></span>
+      <% end %>
+    </ul>
+  </li>
+<% end %>
